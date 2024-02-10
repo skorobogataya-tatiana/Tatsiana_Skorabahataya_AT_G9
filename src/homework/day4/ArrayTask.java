@@ -1,6 +1,10 @@
 package homework.day4;
 
+import java.time.LocalDate;
+
 public class ArrayTask {
+
+    int currentMonth = LocalDate.now().getMonthValue();
 
       public void showSumOfParticularArrayItems(int[] array, int eachNumber) {
         int sum = 0;
@@ -48,5 +52,15 @@ public class ArrayTask {
         for (int i : array) {
             System.out.print(i + " ");
         }
+    }
+
+    public int getSumOfArrayItems(int[] someArray, int currentMonth) {
+          int sum = 0;
+          for(int i : someArray) {
+              if(i % currentMonth == 0) {
+                  sum += i;
+              }
+          }
+          return sum;
     }
 }
