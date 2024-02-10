@@ -63,4 +63,12 @@ public class ArrayTask {
           }
           return sum;
     }
+
+    public void drawHorse() {
+        System.out.println("\t  ^__^");
+        System.out.println("\t  (oo)\\\\_______");
+        System.out.println("\t (__)\\ ) \\/\\  \\");
+        System.out.println("\t      ||----w |\\");
+        System.out.println("\t      ||     ||");
+    }
 }

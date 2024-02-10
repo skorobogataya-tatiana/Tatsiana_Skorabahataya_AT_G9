@@ -8,11 +8,11 @@ public class ArrayTaskRunner {
         int[] numbers = new int[12];
         Random random = new Random();
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(10);
+          numbers[i] = random.nextInt(10);
         }
 
         for (int j : numbers) {
-            System.out.print(j + " ");
+          System.out.print(j + " ");
         }
         System.out.println();
 
@@ -27,6 +27,7 @@ public class ArrayTaskRunner {
         System.out.println("Sum of array items that are multiplies to current month is: " + sumOfMultiplesArrayItems);
         System.out.println();
 
+        arrayTask.drawHorse();
 
     }
 
