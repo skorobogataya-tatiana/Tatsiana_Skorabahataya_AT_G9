@@ -1,7 +1,5 @@
 package homework.dy4;
 
-import java.util.Random;
-
 public class ArrayTask {
     public void showSumOfParticularArrayItems(int[] array, int eachNumber) {
         int sum = 0;
