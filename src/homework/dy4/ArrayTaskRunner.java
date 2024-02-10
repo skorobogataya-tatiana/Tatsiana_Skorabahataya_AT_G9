@@ -2,7 +2,7 @@ package homework.dy4;
 
 import java.util.Random;
 
-public class ArratTaskRunner {
+public class ArrayTaskRunner {
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         int[] numbers = new int[12];
@@ -16,5 +16,9 @@ public class ArratTaskRunner {
         }
         System.out.println();
         arrayTask.showSumOfParticularArrayItems(numbers, 4);
+        System.out.println();
+        int [] newArray = arrayTask.getNewArray(numbers, 3);
+        arrayTask.showRevertedArray(newArray);
     }
+
 }
