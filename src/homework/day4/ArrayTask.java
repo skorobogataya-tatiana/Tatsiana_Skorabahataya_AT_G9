@@ -1,4 +1,4 @@
-package homework.dy4;
+package homework.day4;
 
 public class ArrayTask {
 
@@ -28,9 +28,8 @@ public class ArrayTask {
                 position++;
             }
         }
-        int[] revertedArray = this.revertPositionsOfArrayItems(newArray);
 
-        return revertedArray;
+        return this.revertPositionsOfArrayItems(newArray);
     }
 
     private int[] revertPositionsOfArrayItems(int[] array) {
