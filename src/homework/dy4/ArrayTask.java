@@ -28,9 +28,9 @@ public class ArrayTask {
                 position++;
             }
         }
-        this.revertPositionsOfArrayItems(newArray);
+        int[] revertedArray = this.revertPositionsOfArrayItems(newArray);
 
-        return newArray;
+        return revertedArray;
     }
 
     private int[] revertPositionsOfArrayItems(int[] array) {
