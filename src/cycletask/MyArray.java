@@ -36,7 +36,7 @@ public class MyArray {
 
     public void showSquareSmiles() {
         for (int i = 0; i < smiles.length; i++) {
-            System.out.println("Smile " + smiles[i] + " in square is: " + Math.pow(smiles[i], 2));
+            System.out.println("Smile " + smiles[i] + " in square is: " + smiles[i] * smiles[i]);
         }
         System.out.println();
     }

@@ -1,13 +1,28 @@
 package somepack;
 
+import java.util.Random;
+
 public class TestClass {
-    public static void main(String[] args) {
+ int[] array = new int[7];
 
-        System.out.println("Hello, my friend!");
-        long num1 = 1000000000002223333L;
-        int num2 = 10;
-        num2 = (int) num1;
-        System.out.println(num2);
+ public void fillArray() {
 
-    }
+ //int[] fill = array;
+ Random random = new Random();
+     for (int i = 0; i<array.length; i++) {
+         array[i] = random.nextInt(20);
+     }
+ }
+
+ public void showArray() {
+     for (int j : array) {
+         System.out.println(j);
+     }
+ }
+
+ public static void main(String[] args) {
+     TestClass array = new TestClass();
+     array.fillArray();
+     array.showArray();
+ }
 }

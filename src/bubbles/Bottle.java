@@ -2,31 +2,21 @@ package bubbles;
 
 public class Bottle {
     private double volume;
-    Water water;
+    SparklingWater water;
 
-    public Bottle(double volume, SparklingWater water) {
+    public Bottle(double volume, SparklingWater water, String compound) {
         this.volume = volume;
         this.water = water;
+        water.pump(this, compound);
     }
 
     public double getVolume() {
         return volume;
     }
 
-    public Water getWater() {
-        return water;
-    }
+    public void open() {
 
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
-
-    public void setWater(Water water) {
-        this.water = water;
-    }
-
-    public void open(SparklingWater sparklingwater, Bubble[] bubbledBottle) {
-        sparklingwater.degas(bubbledBottle);
+        water.degas();
     }
 
 }

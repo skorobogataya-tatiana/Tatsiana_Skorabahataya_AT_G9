@@ -8,6 +8,7 @@ public class TrainMethodsObjectsRunner {
         Bee bee = new Bee("Female", 2);
         Obstacle obstacle = new Obstacle("VDI can not be started", "medium");
         Pineapple pineapple = new Pineapple("Red Spanish", 3000.11);
+
         show.processMouse(mouse);
         System.out.println();
         show.processSouce(souce);

@@ -27,10 +27,12 @@ public class TrainMethodsReturn {
     }
 
     public byte returnNewByte(byte b) {
+
         return (byte)(b * 2);
     }
 
     public boolean returnNewBoolean(boolean check) {
+
         return !check;
     }
 }

@@ -14,22 +14,27 @@ public abstract class Water {
     }
 
     public String getColor() {
+
         return color;
     }
 
     public String getSmell() {
+
         return smell;
     }
 
     public double getTransperency() {
+
         return transperency;
     }
 
     public double getTemperature() {
+
         return temperature;
     }
 
     public void setColor(String color) {
+
         this.color = color;
     }
 
@@ -38,10 +43,12 @@ public abstract class Water {
     }
 
     public void setTransperency(double transperency) {
+
         this.transperency = transperency;
     }
 
     public void setTemperatre(double temperature) {
+
         this.temperature = temperature;
     }
 }

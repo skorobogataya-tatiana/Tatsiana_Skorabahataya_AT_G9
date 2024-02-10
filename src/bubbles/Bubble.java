@@ -9,6 +9,7 @@ public class Bubble {
     }
 
     public void burstBubble() {
+
         System.out.print("Cramp!");
     }
 }
