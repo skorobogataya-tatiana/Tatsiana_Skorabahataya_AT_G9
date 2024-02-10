@@ -14,17 +14,17 @@ public class ArrayTask {
 
     public int[] getNewArray(int[] oldArray, int numberToCompare) {
         int counter = 0;
-        for (int i = 0; i < oldArray.length; i++) {
-            if (oldArray[i] > numberToCompare) {
+        for (int i : oldArray) {
+            if (i > numberToCompare) {
                 counter++;
             }
         }
         int[] newArray = new int[counter];
         int position = 0;
-        for (int j = 0; j < oldArray.length; j++) {
+        for (int j : oldArray) {
 
-            if (oldArray[j] > numberToCompare) {
-                newArray[position] = oldArray[j];
+            if (j > numberToCompare) {
+                newArray[position] = j;
                 position++;
             }
         }
