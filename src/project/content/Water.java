@@ -47,7 +47,7 @@ public abstract class Water {
         this.transparency = transparency;
     }
 
-    public void setTemperatre(int temperature) {
+    public void setTemperature(int temperature) {
 
         this.temperature = temperature;
     }

@@ -18,7 +18,7 @@ public class Bottle {
     }
 
     public void warm(int temperature) {
-        this.water.setTemperatre(temperature);
+        this.water.setTemperature(temperature);
     }
 
     public Water getWater() {
@@ -30,12 +30,13 @@ public class Bottle {
     }
 
     public void setBubbles() {
-        Bubble[] bubblesForBottle = new Bubble[(int) volume * 10000];
-        ((SparklingWater)water).pump(bubblesForBottle);
+        Bubble[] bubblesForBottle = new Bubble[(int) (volume * 10000)];
+        ((SparklingWater) water).pump(bubblesForBottle);
     }
+
     public void open() throws InterruptedException {
 
-        ((SparklingWater)water).setOpened();
+        ((SparklingWater) water).setOpened();
 
     }
 

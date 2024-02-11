@@ -10,17 +10,8 @@ public class SparklingWater extends Water {
         this.isOpened();
     }
 
-   // public void pump(Bottle bottle, String compound) {
-     //   int bubblesNumber = (int) (bottle.getVolume() * BUBBLES_IN_LITER);
-       // this.bubbles = new Bubble[bubblesNumber];
-        //for (int i = 0; i < bubbles.length; i++) {
-          //  Bubble bubble = new Bubble(compound);
-            //bubbles[i] = bubble;
-        //}
-    //}
-
     public void pump(Bubble[] bubblesForBottle) {
-        for(int i = 0; i < bubblesForBottle.length; i++) {
+        for (int i = 0; i < bubblesForBottle.length; i++) {
             bubblesForBottle[i] = new Bubble("Oxigen");
         }
         this.bubbles = bubblesForBottle;
@@ -43,7 +34,7 @@ public class SparklingWater extends Water {
                 }
                 bubbles[i] = null;
                 counter++;
-                if(counter==numbeOfBubblesToCramp) {
+                if (counter == numbeOfBubblesToCramp) {
                     Thread.sleep(1000);
                 }
             }
