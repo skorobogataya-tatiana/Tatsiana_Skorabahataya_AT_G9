@@ -2,13 +2,18 @@ package project.content;
 
 public class Bubble {
     private final double VOLUME = 0.3;
-    private String compound;
+    private String gas;
 
-    public Bubble(String compound) {
-        this.compound = compound;
+    public Bubble(String gas) {
+
+        this.gas = gas;
     }
 
-    public void burstBubble() {
+    public double getVolume() {
+        return VOLUME;
+    }
+
+    public void cramp() {
 
         System.out.print("Cramp!");
     }
