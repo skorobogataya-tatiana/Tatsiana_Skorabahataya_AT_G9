@@ -23,7 +23,7 @@ public class SparklingWater extends Water {
         if (bubbles[bubbles.length - 1] != null) {
             for (int i = 0; i < bubbles.length; i++) {
                 Bubble bubble = bubbles[i];
-                bubble.burstBubble();
+                bubble.cramp();
                 if (i != 0 && (i % 300 == 0)) {
                     System.out.println();
                 }
