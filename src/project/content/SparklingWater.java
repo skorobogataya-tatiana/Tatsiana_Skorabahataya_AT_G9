@@ -6,7 +6,7 @@ public class SparklingWater extends Water {
     Bubble[] bubbles;
     private final int BUBBLES_IN_LITER = 10000;
 
-    public SparklingWater(String color, String smell, double transperency, double temperature) {
+    public SparklingWater(String color, String smell, String transperency, int temperature) {
         super(color, smell, transperency, temperature);
     }
 

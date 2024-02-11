@@ -3,13 +3,13 @@ package project.content;
 public abstract class Water {
     private String color = "no";
     private String smell = "no";
-    private String transperency = "transparent";
+    private String transparency = "transparent";
     private int temperature = 0;
 
-    public Water(String color, String smell, String transperency, int temperature) {
+    public Water(String color, String smell, String transparency, int temperature) {
         this.color = color;
         this.smell = smell;
-        this.transperency = transperency;
+        this.transparency = transparency;
         this.temperature = temperature;
     }
 
@@ -23,9 +23,9 @@ public abstract class Water {
         return smell;
     }
 
-    public String getTransperency() {
+    public String getTransparency() {
 
-        return transperency;
+        return transparency;
     }
 
     public int getTemperature() {
@@ -42,9 +42,9 @@ public abstract class Water {
         this.smell = smell;
     }
 
-    public void setTransperency(String transperency) {
+    public void setTransparency(String transparency) {
 
-        this.transperency = transperency;
+        this.transparency = transparency;
     }
 
     public void setTemperatre(int temperature) {
