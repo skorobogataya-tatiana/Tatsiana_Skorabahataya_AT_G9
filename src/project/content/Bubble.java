@@ -10,6 +10,7 @@ public class Bubble {
     }
 
     public double getVolume() {
+        System.out.printf("Getting volume of the bubble").println();
         return VOLUME;
     }
 
