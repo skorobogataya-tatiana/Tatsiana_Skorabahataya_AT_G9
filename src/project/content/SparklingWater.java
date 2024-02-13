@@ -20,7 +20,7 @@ public class SparklingWater extends Water {
     public void setOpened() throws InterruptedException {
         System.out.printf("Sparkling water is set to open").println();
         isOpened = true;
-        this.degas();
+        degas();
 
     }
 
