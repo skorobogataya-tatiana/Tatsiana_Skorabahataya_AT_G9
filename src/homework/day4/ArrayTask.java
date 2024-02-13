@@ -33,7 +33,7 @@ public class ArrayTask {
             }
         }
 
-        return this.revertPositionsOfArrayItems(newArray);
+        return revertPositionsOfArrayItems(newArray);
     }
 
     private int[] revertPositionsOfArrayItems(int[] array) {
