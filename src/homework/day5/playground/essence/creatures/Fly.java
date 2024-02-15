@@ -10,6 +10,6 @@ public class Fly extends Insect implements Flyable {
 
     @Override
     public void fly(String direction) {
-        System.out.printf("I am %s, my name is %s and I am flying to %s", this.getClass().getSimpleName(), this.getName(), direction).println();
+        System.out.printf("I am %s, my name is %s and I am flying to %s", getClass().getSimpleName(), getName(), direction).println();
     }
 }

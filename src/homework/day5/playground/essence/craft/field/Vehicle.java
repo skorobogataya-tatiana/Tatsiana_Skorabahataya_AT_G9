@@ -25,9 +25,14 @@ public abstract class Vehicle extends Matter implements Transportable, Rideable 
 
     @Override
     public int move(int pointA, int pointB) {
-        System.out.printf("I am %s, my name is %s and I am moving from point %d to point %d", this.getClass().getSimpleName(), this.getName(), pointA, pointB);
+        System.out.printf("I am %s, my name is %s and I am moving from point %d to point %d", getClass().getSimpleName(), getName(), pointA, pointB);
         System.out.println();
         return pointB - pointA;
+    }
+
+    @Override
+    public void drive(String direction) {
+        System.out.printf("I am %s , my name is %s and I am driving to %s", getClass().getSimpleName(), getName(), direction).println();
     }
 
 }
