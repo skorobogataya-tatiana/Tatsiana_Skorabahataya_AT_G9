@@ -16,11 +16,11 @@ public class StringObjectRunner {
         numbersInString.showNumbersFromString("This is string 1 that contains 234 73 some numbers 09 ");
         System.out.println();
 
-        //ParceLog parceLog = new ParceLog();
-        //parceLog.checkLog("access_log.2020.09.07 212.168.101.5 granted\n" +
-        //      "access_log.2020.09.07 212.168.101.6 denied\n" +
-        //    "access_log.2020.09.07 212.168.101.6 denied\n" +
-        //  "access_log.2020.09.07 212.168.122.6 denied\n");
+        ParceLog parceLog = new ParceLog();
+        parceLog.checkLog("access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.122.6 denied\n");
 
 
         CurrentDateAndTime currentDateAndTime = new CurrentDateAndTime();

@@ -8,10 +8,10 @@ public class StringStaticRunner {
         Duplicates.showDuplicates("This duplicates string is a string for checking this string duplicates string !");
         NumbersInString.showNumbersFromString("This is string 1 that contains 234 73 some numbers 09 ");
 
-//        ParceLogs2.checkLog("access_log.2020.09.07 212.168.101.5 granted\n" +
-//              "access_log.2020.09.07 212.168.101.6 denied\n" +
-//            "access_log.2020.09.07 212.168.101.6 denied\n" +
-//          "access_log.2020.09.07 212.168.122.6 denied\n");
+        ParceLog.checkLog("access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.122.6 denied\n");
 
         System.out.println();
         CurrentDateAndTime.showCurrentDateAndTime();
