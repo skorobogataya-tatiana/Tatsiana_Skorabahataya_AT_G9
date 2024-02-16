@@ -3,7 +3,7 @@ package homework.day5.strings;
 public class ParceLog {
 
     public static void checkLog(String log) {
-        String regex = "\\d{3}\\.\\d{3}\\.\\d{3}\\.\\d{1}\\s";
+        String regex = "\\d{3}.\\d{3}.\\d{3}.\\d{1}";
         int granted = 0;
         int denied = 0;
         String ip = null;

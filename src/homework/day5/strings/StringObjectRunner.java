@@ -9,7 +9,7 @@ public class StringObjectRunner {
         System.out.println();
 
         Duplicates duplicates = new Duplicates();
-        duplicates.findDuplicates("This string is a string for checking this duplicates!");
+        duplicates.showDuplicates("This string is a string for checking this duplicates!");
         System.out.println();
 
         NumbersInString numbersInString = new NumbersInString();
