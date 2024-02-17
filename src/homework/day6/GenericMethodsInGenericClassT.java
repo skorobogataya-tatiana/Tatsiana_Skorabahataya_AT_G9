@@ -6,9 +6,8 @@ public class GenericMethodsInGenericClassT<T> {
     }
 
     public <G> String genericMethodTwoGenArgs(T one, G two) {
-        String className1 = one.getClass().getSimpleName();
-        String className2 = two.getClass().getSimpleName();
-        return "We are objects of " + className1 + " class and " + className2 + " class.";
+
+        return "We are objects of " + one.getClass().getSimpleName() + " class and " + two.getClass().getSimpleName() + " class.";
     }
 
     public void genericMethodHalfGenArgs(T obj, String string) {
