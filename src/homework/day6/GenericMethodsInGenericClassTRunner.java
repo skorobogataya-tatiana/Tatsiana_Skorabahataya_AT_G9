@@ -223,21 +223,21 @@ public class GenericMethodsInGenericClassTRunner {
         System.out.println();
 
         GenericMethodsInGenericClassT<Diesel> genericMethodsInGenericClassT32 = new GenericMethodsInGenericClassT<>();
-        genericMethodsInGenericClassT32.genericMethodOneGenArg(new Diesel());
-        System.out.println(genericMethodsInGenericClassT32.genericMethodTwoGenArgs(new Diesel(), "Test diesel"));
-        genericMethodsInGenericClassT32.genericMethodHalfGenArgs(new Diesel(), "This is a test string for method three");
+        genericMethodsInGenericClassT32.genericMethodOneGenArg(new Diesel(10));
+        System.out.println(genericMethodsInGenericClassT32.genericMethodTwoGenArgs(new Diesel(20), "Test diesel"));
+        genericMethodsInGenericClassT32.genericMethodHalfGenArgs(new Diesel(30), "This is a test string for method three");
         System.out.println();
 
         GenericMethodsInGenericClassT<Petrol> genericMethodsInGenericClassT33 = new GenericMethodsInGenericClassT<>();
-        genericMethodsInGenericClassT33.genericMethodOneGenArg(new Petrol());
-        System.out.println(genericMethodsInGenericClassT33.genericMethodTwoGenArgs(new Petrol(), 0.2));
-        genericMethodsInGenericClassT33.genericMethodHalfGenArgs(new Petrol(), "Petrol");
+        genericMethodsInGenericClassT33.genericMethodOneGenArg(new Petrol(10));
+        System.out.println(genericMethodsInGenericClassT33.genericMethodTwoGenArgs(new Petrol(20), 0.2));
+        genericMethodsInGenericClassT33.genericMethodHalfGenArgs(new Petrol(30), "Petrol");
         System.out.println();
 
         GenericMethodsInGenericClassT<Water> genericMethodsInGenericClassT34 = new GenericMethodsInGenericClassT<>();
-        genericMethodsInGenericClassT34.genericMethodOneGenArg(new Water());
-        System.out.println(genericMethodsInGenericClassT34.genericMethodTwoGenArgs(new Water(), new Copter(222, "Copter-topter")));
-        genericMethodsInGenericClassT34.genericMethodHalfGenArgs(new Water(), "Some water for you");
+        genericMethodsInGenericClassT34.genericMethodOneGenArg(new Water(50));
+        System.out.println(genericMethodsInGenericClassT34.genericMethodTwoGenArgs(new Water(60), new Copter(222, "Copter-topter")));
+        genericMethodsInGenericClassT34.genericMethodHalfGenArgs(new Water(70), "Some water for you");
         System.out.println();
 
         GenericMethodsInGenericClassT<String> genericMethodsInGenericClassT35 = new GenericMethodsInGenericClassT<>();
