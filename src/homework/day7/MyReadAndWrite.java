@@ -1,6 +1,5 @@
 package homework.day7;
 
-import javax.imageio.IIOException;
 import java.io.*;
 
 public class MyReadAndWrite {
