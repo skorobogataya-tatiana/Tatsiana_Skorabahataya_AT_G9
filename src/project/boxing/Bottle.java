@@ -3,12 +3,14 @@ package project.boxing;
 import project.content.Bubble;
 import project.content.SparklingWater;
 import project.content.Water;
+import project.matter.Material;
 
-public class Bottle {
+public class Bottle extends Vessel implements Containable{
     private double volume;
     private Water water = new SparklingWater("no", "no", "transparent", 2);
 
-    public Bottle(double volume) {
+    public Bottle(double volume, double diameter, Material material) {
+        super(volume, diameter, material);
         this.volume = volume;
     }
 
