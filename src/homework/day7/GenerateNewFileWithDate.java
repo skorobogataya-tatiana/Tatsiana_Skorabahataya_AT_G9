@@ -9,7 +9,7 @@ public class GenerateNewFileWithDate {
     public void createFileWithDate() {
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("testFileThree.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\testFileThree.txt"));
             String line;
             int numberOfCharacters = 0;
 
@@ -18,7 +18,7 @@ public class GenerateNewFileWithDate {
             }
             reader.close();
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(generateFileName(numberOfCharacters)));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\" + generateFileName(numberOfCharacters)));
             writer.write(" Number of characters in the file is: " + numberOfCharacters);
             writer.close();
 

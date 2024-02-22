@@ -10,7 +10,7 @@ public class MyReadAndCount {
     public void readFileAndCountChars() {
         int numberOfChars = 0;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("consonantsTest.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\messageTwo.txt"));
             String line;
 
 

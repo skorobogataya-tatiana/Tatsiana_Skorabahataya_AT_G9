@@ -7,7 +7,7 @@ public class MyReadAndWrite {
     public void writeTextWithRemovedVowels() {
         try {
 
-            BufferedReader in = new BufferedReader(new FileReader("myMessageFromConsole.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\myMessageFromConsole.txt"));
             String line;
             String newMessage = "";
 
@@ -19,7 +19,7 @@ public class MyReadAndWrite {
             }
             in.close();
 
-            BufferedWriter out = new BufferedWriter(new FileWriter("myMessageFromConsole.txt"));
+            BufferedWriter out = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\myMessageFromConsole.txt"));
             out.write(newMessage);
             out.close();
 

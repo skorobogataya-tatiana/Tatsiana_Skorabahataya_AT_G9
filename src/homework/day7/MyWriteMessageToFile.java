@@ -13,7 +13,7 @@ public class MyWriteMessageToFile {
         Scanner scanner = new Scanner(System.in);
         String message = scanner.nextLine();
         try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("myMessageFromConsole.txt"));
+            BufferedWriter out = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\myMessageFromConsole.txt"));
             out.write(message);
             out.close();
         } catch (IOException e) {

@@ -8,7 +8,7 @@ public class MyReadAndWriteNoConsonants {
 
         try {
 
-            BufferedReader reader = new BufferedReader(new FileReader("consonantsTest.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\messageTwo.txt"));
             String line;
             String newText = "";
 
@@ -18,7 +18,7 @@ public class MyReadAndWriteNoConsonants {
             }
             reader.close();
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("consonantsTest.txt", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\messageTwo.txt", true));
             writer.write("\n\n" + newText);
             writer.close();
 
