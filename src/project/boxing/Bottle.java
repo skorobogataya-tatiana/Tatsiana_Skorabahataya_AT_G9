@@ -32,12 +32,6 @@ public class Bottle extends Vessel implements Containable {
         System.out.printf("Setting water to the bottle").println();
     }
 
-    private void setBubbles() {
-
-        Bubble[] bubblesForBottle = new Bubble[(int) (getVolume() * 10000)];
-        ((SparklingWater) water).pump(bubblesForBottle);
-        System.out.printf("Bubbles where added to the water of the bottle").println();
-    }
 
     public void open() throws InterruptedException {
 
@@ -55,6 +49,14 @@ public class Bottle extends Vessel implements Containable {
         }
         System.out.printf("This vessel is %s and %s was added to it.", getClass().getSimpleName(), stuff.getClass().getSimpleName()).println();
     }
+
+    private void setBubbles() {
+
+        Bubble[] bubblesForBottle = new Bubble[(int) (getVolume() * 10000)];
+        ((SparklingWater) water).pump(bubblesForBottle);
+        System.out.printf("Bubbles where added to the water of the bottle").println();
+    }
+
 
     @Override
     public Transformable removeStuff() {
