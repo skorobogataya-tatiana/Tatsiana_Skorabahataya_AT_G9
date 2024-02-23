@@ -2,13 +2,16 @@ package project.boxing;
 
 import project.content.Bubble;
 import project.content.SparklingWater;
+import project.content.Transformable;
 import project.content.Water;
+import project.matter.Material;
 
-public class Bottle {
+public class Bottle extends Vessel implements Containable {
     private double volume;
     private Water water = new SparklingWater("no", "no", "transparent", 2);
 
-    public Bottle(double volume) {
+    public Bottle(double volume, double diameter, Material material) {
+        super(volume, diameter, material);
         this.volume = volume;
     }
 
@@ -34,7 +37,7 @@ public class Bottle {
         System.out.printf("Setting water to the bottle").println();
     }
 
-    public void setBubbles() {
+    private void setBubbles() {
 
         Bubble[] bubblesForBottle = new Bubble[(int) (volume * 10000)];
         ((SparklingWater) water).pump(bubblesForBottle);
@@ -44,8 +47,30 @@ public class Bottle {
     public void open() throws InterruptedException {
 
         ((SparklingWater) water).setOpened();
-        System.out.printf("Bottle is opened").println();
+        System.out.printf("Bottle of %f volume with %s is opened", volume, water.getClass().getSimpleName()).println();
 
     }
 
+
+    @Override
+    public void addStuff(Transformable stuff) {
+
+        if (stuff instanceof SparklingWater) {
+            setBubbles();
+        }
+        System.out.printf("This vessel is %s and %s was added to it.", getClass().getSimpleName(), stuff.getClass().getSimpleName()).println();
+    }
+
+    @Override
+    public Transformable removeStuff() {
+        System.out.printf("Stuff was removed from %s.", getClass().getSimpleName());
+        return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        boolean checkEmpty = false;
+        System.out.printf("This %s is %b", getClass().getSimpleName(), checkEmpty).println();
+        return checkEmpty;
+    }
 }

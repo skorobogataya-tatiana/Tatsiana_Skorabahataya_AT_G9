@@ -1,6 +1,6 @@
 package project.content;
 
-public abstract class Water {
+public abstract class Water implements Transformable {
     private String color = "no";
     private String smell = "no";
     private String transparency = "transparent";
