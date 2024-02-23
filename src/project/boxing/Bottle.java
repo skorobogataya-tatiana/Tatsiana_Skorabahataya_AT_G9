@@ -6,7 +6,7 @@ import project.content.Transformable;
 import project.content.Water;
 import project.matter.Material;
 
-public class Bottle extends Vessel implements Containable{
+public class Bottle extends Vessel implements Containable {
     private double volume;
     private Water water = new SparklingWater("no", "no", "transparent", 2);
 
@@ -37,7 +37,7 @@ public class Bottle extends Vessel implements Containable{
         System.out.printf("Setting water to the bottle").println();
     }
 
-    public void setBubbles() {
+    private void setBubbles() {
 
         Bubble[] bubblesForBottle = new Bubble[(int) (volume * 10000)];
         ((SparklingWater) water).pump(bubblesForBottle);
@@ -47,7 +47,7 @@ public class Bottle extends Vessel implements Containable{
     public void open() throws InterruptedException {
 
         ((SparklingWater) water).setOpened();
-        System.out.printf("Bottle is opened").println();
+        System.out.printf("Bottle of %f volume with %s is opened", volume, water.getClass().getSimpleName()).println();
 
     }
 
@@ -55,6 +55,9 @@ public class Bottle extends Vessel implements Containable{
     @Override
     public void addStuff(Transformable stuff) {
 
+        if (stuff instanceof SparklingWater) {
+            setBubbles();
+        }
         System.out.printf("This vessel is %s and %s was added to it.", getClass().getSimpleName(), stuff.getClass().getSimpleName()).println();
     }
 
