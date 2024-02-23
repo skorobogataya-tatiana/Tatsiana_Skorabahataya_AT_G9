@@ -7,19 +7,14 @@ import project.content.Water;
 import project.matter.Material;
 
 public class Bottle extends Vessel implements Containable {
-    private double volume;
+
     private Water water = new SparklingWater("no", "no", "transparent", 2);
 
     public Bottle(double volume, double diameter, Material material) {
         super(volume, diameter, material);
-        this.volume = volume;
+
     }
 
-    public double getVolume() {
-        System.out.printf("Getting volume of the bottle").println();
-
-        return volume;
-    }
 
     public void warm(int temperature) {
         System.out.printf("Setting of the water temperature to %d degrees", temperature).println();
@@ -39,7 +34,7 @@ public class Bottle extends Vessel implements Containable {
 
     private void setBubbles() {
 
-        Bubble[] bubblesForBottle = new Bubble[(int) (volume * 10000)];
+        Bubble[] bubblesForBottle = new Bubble[(int) (getVolume() * 10000)];
         ((SparklingWater) water).pump(bubblesForBottle);
         System.out.printf("Bubbles where added to the water of the bottle").println();
     }
@@ -47,7 +42,7 @@ public class Bottle extends Vessel implements Containable {
     public void open() throws InterruptedException {
 
         ((SparklingWater) water).setOpened();
-        System.out.printf("Bottle of %f volume with %s is opened", volume, water.getClass().getSimpleName()).println();
+        System.out.printf("Bottle of %f volume with %s is opened", getVolume(), water.getClass().getSimpleName()).println();
 
     }
 
