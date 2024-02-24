@@ -4,7 +4,7 @@ import homework.day5.playground.essence.Matter;
 
 import java.io.Serializable;
 
-public abstract class Animal extends Matter implements Serializable {
+public abstract class Animal extends Matter {
 
     protected String name;
 

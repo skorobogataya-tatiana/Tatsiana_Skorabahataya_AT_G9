@@ -4,7 +4,7 @@ import homework.day5.playground.essence.creatures.Fly;
 
 import java.io.*;
 
-public class MyDeserializationTest implements Serializable {
+public class MyDeserializationTest {
 
     public void deserializeObject() {
 

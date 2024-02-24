@@ -4,7 +4,7 @@ import homework.day5.playground.essence.Flyable;
 
 import java.io.Serializable;
 
-public class Fly extends Insect implements Flyable, Serializable {
+public class Fly extends Insect implements Flyable {
     public Fly(int mass, String name) {
 
         super(mass, name);
