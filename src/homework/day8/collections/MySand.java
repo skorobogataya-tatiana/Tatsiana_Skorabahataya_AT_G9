@@ -27,7 +27,7 @@ public class MySand {
 
         Map<Integer, Sand> mySandMap = new HashMap<>();
 
-        for (int i = 1; i < sandbox.size(); i++) {
+        for (int i = 0; i < sandbox.size(); i++) {
             mySandMap.put(i, sandbox.get(i));
         }
 
