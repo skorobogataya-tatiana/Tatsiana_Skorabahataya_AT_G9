@@ -41,8 +41,8 @@ public class MyElements {
         elements.remove(1);
         elements.set(4, "Switch");
 
-        for (int i = 0; i < elements.size(); i++) {
-            System.out.print(elements.get(i) + " ");
+        for (String element : elements) {
+            System.out.print(element + " ");
         }
     }
 }
