@@ -6,7 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MyBirds {
-
     public static int countNumberOfVowels(String word) {
 
         int counter = 0;
@@ -45,5 +44,4 @@ public class MyBirds {
             System.out.print(bird + " ");
         }
     }
-
 }
