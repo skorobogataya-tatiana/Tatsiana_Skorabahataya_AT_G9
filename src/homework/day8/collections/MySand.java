@@ -47,6 +47,5 @@ public class MySand {
         for (Map.Entry<Integer, Sand> pair : mySandMap.entrySet()) {
             System.out.println(pair);
         }
-
     }
 }

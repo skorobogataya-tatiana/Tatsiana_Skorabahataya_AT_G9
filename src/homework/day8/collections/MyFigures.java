@@ -22,7 +22,6 @@ public class MyFigures {
                 } else {
                     stringToWrite += figure;
                 }
-
             }
             writer.write(stringToWrite);
             writer.close();
@@ -31,7 +30,6 @@ public class MyFigures {
             System.out.println(e.getMessage() + "\n" + e.getCause());
         }
 
-
         int counterOfMatches = 0;
         for (String figure : myFiguresList) {
             if (!figure.toLowerCase().contains(String.valueOf('a'))) {
@@ -39,7 +37,6 @@ public class MyFigures {
             }
         }
         System.out.println("Number of figures that don't contain letter 'a' in their name: " + counterOfMatches);
-
 
         for (int i = 0; i < myFiguresList.size(); i++) {
             System.out.print(myFiguresList.get(i) + " ");

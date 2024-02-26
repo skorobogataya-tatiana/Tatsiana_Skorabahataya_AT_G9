@@ -46,6 +46,5 @@ public class MyCars {
         for (String car : myCarsList) {
             System.out.print(car + " ");
         }
-
     }
 }

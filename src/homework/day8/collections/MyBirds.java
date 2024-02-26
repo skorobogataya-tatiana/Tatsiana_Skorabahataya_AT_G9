@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 public class MyBirds {
 
-
     public static int countNumberOfVowels(String word) {
 
         int counter = 0;
@@ -17,7 +16,6 @@ public class MyBirds {
             counter++;
         }
         return counter;
-
     }
 
     public static void main(String[] args) {
@@ -27,7 +25,6 @@ public class MyBirds {
         for (String bird : birds) {
             System.out.println("--" + bird + "--");
         }
-
 
         int numberOfBirdsWithSeveralVowels = 0;
         for (String bird : birds) {

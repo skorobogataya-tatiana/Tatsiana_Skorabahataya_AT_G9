@@ -6,7 +6,6 @@ import java.util.List;
 public class MyCities {
 
     public static void main(String[] args) {
-
         List<String> cities = new ArrayList<>();
         cities.add("Minsk");
         cities.add("Moskva");
@@ -28,6 +27,5 @@ public class MyCities {
         for (int i = 0; i < cities.size(); i++) {
             System.out.print(cities.get(i) + " ");
         }
-
     }
 }

@@ -6,9 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MyBubbles {
-
     public static void main(String[] args) {
-
         List<Bubble> bubbles = Arrays.asList(new Bubble(2, "CO2"),
                 new Bubble(4, "O2"),
                 new Bubble(5, "CO"));

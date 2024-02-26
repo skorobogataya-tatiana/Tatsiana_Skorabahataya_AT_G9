@@ -16,6 +16,5 @@ public class MyWater {
         for (Water sample : water) {
             System.out.println(sample.getColor() + '-' + sample.getSmell());
         }
-
     }
 }
