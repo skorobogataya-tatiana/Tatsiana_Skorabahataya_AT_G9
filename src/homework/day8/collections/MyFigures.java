@@ -41,9 +41,14 @@ public class MyFigures {
         for (int i = 0; i < myFiguresList.size(); i++) {
             System.out.print(myFiguresList.get(i) + " ");
         }
-
         System.out.println();
-        myFiguresList.set(2, "Triangle");
+
+        try {
+            myFiguresList.add(2, "Triangle");
+        } catch (UnsupportedOperationException e) {
+            System.out.println(e);
+            System.out.println("Reason of exception: size of Array list, initialised via Arrays.asList(), can't be changed, so add() method with index can't be used here");
+        }
 
         for (String figure : myFiguresList) {
             System.out.print(figure + " ");
