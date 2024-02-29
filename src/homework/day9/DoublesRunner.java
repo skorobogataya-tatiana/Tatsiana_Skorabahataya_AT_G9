@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class DoublesRunner {
     public static void main(String[] args) {
         Stream<Double> doubles = Stream.of(33.42, 34.3, 0.79, 2.3426, 6.8, 13.24, 5.5, 769.9);
-        doubles.map(b -> (int) Math.round(b)).
+        System.out.println(doubles.map(b -> (int) Math.round(b)).
                 map(b -> {
                     Random random = new Random();
                     return random.nextInt(0, b + 1);
@@ -21,6 +21,6 @@ public class DoublesRunner {
                         bubbles[i] = new Bubble(b, "Bubble vol -" + b);
                     }
                     return bubbles;
-                }).forEach(b -> System.out.println(Arrays.toString(b)));
+                }).peek(b -> System.out.println(Arrays.toString(b))).flatMap(Arrays::stream).mapToInt(Bubble::getVolume).sum());
     }
 }
