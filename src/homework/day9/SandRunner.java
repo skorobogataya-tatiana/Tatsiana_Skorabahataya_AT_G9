@@ -24,11 +24,9 @@ public class SandRunner {
                 .map(s -> new Sand(s.getWeight() * 2, s.getName().toUpperCase()))
                 .collect(Collectors.toMap(Sand::getWeight, Sand::getName))
                 .forEach((weight, name) -> {
-                    try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\stream\\sand.txt", true));
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Tatsiana_Skorabahata\\Desktop\\automation\\JavaCourse\\files\\stream\\sand.txt", true))) {
                         String sandInfo = name + ":" + weight;
                         writer.write(sandInfo + "\n");
-                        writer.close();
                     } catch (IOException e) {
                         System.out.println(e.getMessage() + " " + e.getCause());
                     }
