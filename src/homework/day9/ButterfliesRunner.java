@@ -12,7 +12,9 @@ public class ButterfliesRunner {
         butterflies.add("Aglais io");
         butterflies.add("Common blue");
 
-        butterflies.stream().map(s -> "\"" + s + "\"").flatMap(s -> Arrays.stream(s.split(" "))).filter(s -> s.contains("a") && s.contains("o")).forEach(System.out::println);
-
+        butterflies.stream().map(s -> "\"" + s + "\"")
+                .flatMap(s -> Arrays.stream(s.split(" ")))
+                .filter(s -> s.contains("a") && s.contains("o"))
+                .forEach(System.out::println);
     }
 }
