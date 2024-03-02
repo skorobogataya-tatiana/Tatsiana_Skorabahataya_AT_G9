@@ -1,5 +1,6 @@
 package homework.day9;
 
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class NumbersModRunner {
@@ -31,6 +32,9 @@ public class NumbersModRunner {
                         default:
                             return "";
                     }
-                }).forEach(System.out::println);
+                })
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .forEach(System.out::println);
     }
 }
