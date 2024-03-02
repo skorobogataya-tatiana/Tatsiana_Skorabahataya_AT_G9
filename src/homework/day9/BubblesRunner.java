@@ -12,9 +12,12 @@ public class BubblesRunner {
                 new Bubble(4, "O2"),
                 new Bubble(5, "CO"));
 
-        System.out.println(bubbles.stream().filter(b -> b.getVolume() > 3)
+        System.out.println(bubbles.stream()
+                .filter(b -> b.getVolume() > 3)
                 .sorted(Comparator.comparing(Bubble::getName))
                 .map(b -> new Bubble(b.getVolume() * 3, b.getName()))
-                .mapToInt(Bubble::getVolume).reduce(Integer::sum).getAsInt());
+                .mapToInt(Bubble::getVolume)
+                .reduce(Integer::sum)
+                .getAsInt());
     }
 }

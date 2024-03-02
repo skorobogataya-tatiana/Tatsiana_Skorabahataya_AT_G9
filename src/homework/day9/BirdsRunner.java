@@ -10,7 +10,9 @@ public class BirdsRunner {
         Collection<String> birds = Arrays.asList("Чайка", "Дрозд", "Бусел", "Голубь", "Воробей", "Цапля");
         Stream<String> birdsStream = birds.stream();
 
-        Arrays.stream(birdsStream.map(s -> s.replaceAll("о", "а")).map(String::toLowerCase).collect(Collectors.joining())
+        Arrays.stream(birdsStream.map(s -> s.replaceAll("о", "а"))
+                        .map(String::toLowerCase)
+                        .collect(Collectors.joining())
                         .replaceAll("ь", "").split("б"))
                 .forEach(s -> System.out.println("--" + s + "--"));
     }

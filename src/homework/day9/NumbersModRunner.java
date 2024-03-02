@@ -6,8 +6,10 @@ import java.util.stream.Stream;
 public class NumbersModRunner {
     public static void main(String[] args) {
         Stream<Integer> numbersMod = Stream.of(626, 435, 9, 1463268, 24, 2237, 33, 9090);
-        numbersMod.filter(i -> i.toString().contains("3")).flatMapToInt(i -> String.valueOf(i).chars()).mapToObj(c -> (char) c).
-                map(c -> {
+        numbersMod.filter(i -> i.toString().contains("3"))
+                .flatMapToInt(i -> String.valueOf(i).chars())
+                .mapToObj(c -> (char) c)
+                .map(c -> {
                     switch (c) {
                         case '0':
                             return "Zero";
