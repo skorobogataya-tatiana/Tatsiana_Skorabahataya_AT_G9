@@ -13,13 +13,17 @@ public class WaterRunner {
                 new Water("Мутная", "Аммиачный"),
                 new Water("Синяя", "Мятный"));
 
-        System.out.println(water.filter(w -> !w.getColor().equals("Прозрачная")).sorted(Comparator.comparing(Water::getSmell).reversed())
+        System.out.println(water.filter(w -> !w.getColor().equals("Прозрачная"))
+                .sorted(Comparator.comparing(Water::getSmell).reversed())
                 .map(w -> {
                     String smell = w.getSmell();
                     if (smell.contains("ы")) {
                         smell = smell.replace("ы", "ыы");
                     }
                     return new Water(w.getColor(), smell);
-                }).map(Water::getSmell).collect(Collectors.joining()).length());
+                })
+                .map(Water::getSmell)
+                .collect(Collectors.joining())
+                .length());
     }
 }

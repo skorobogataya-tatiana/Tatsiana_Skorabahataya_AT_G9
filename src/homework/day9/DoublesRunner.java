@@ -21,6 +21,10 @@ public class DoublesRunner {
                         bubbles[i] = new Bubble(b, "Bubble vol -" + b);
                     }
                     return bubbles;
-                }).peek(b -> System.out.println(Arrays.toString(b))).flatMap(Arrays::stream).mapToInt(Bubble::getVolume).sum());
+                })
+                .peek(b -> System.out.println(Arrays.toString(b)))
+                .flatMap(Arrays::stream)
+                .mapToInt(Bubble::getVolume)
+                .sum());
     }
 }
