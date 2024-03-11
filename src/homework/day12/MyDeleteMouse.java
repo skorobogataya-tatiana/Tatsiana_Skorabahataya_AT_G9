@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDeleteMouse {
-
+    //- в главном потоке создать коллекцию из 280 мышей, далее создать 5 дочерних потоков (например, в цикле for),
+    // в каждом из которых удалять 1 пикающую мышь, пока коллекция не станет пустой
     static Object lock = new Object();
 
     public static void main(String[] args) {
@@ -16,8 +17,8 @@ public class MyDeleteMouse {
         for (int j = 0; j < 5; j++) {
             new Thread(() -> {
                 synchronized (lock) {
-                    while (mice.size() != 0) {
-                        if (mice.size() != 0) {
+                    while (!mice.isEmpty()) {
+                        if (!mice.isEmpty()) {
                             Mouse removedMouse = (Mouse) (mice.remove(0));
                             removedMouse.peep();
                         }
