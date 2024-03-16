@@ -1,6 +1,7 @@
 package homework.day12;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MyDeleteMouse {
@@ -9,19 +10,21 @@ public class MyDeleteMouse {
     static Object lock = new Object();
 
     public static void main(String[] args) {
-        List mice = new ArrayList<>();
-        for (int i = 0; i < 280; i++) {
+        List<Mouse> mice = new ArrayList<>();
+        for (int i = 0; i < 40; i++) {
             mice.add(new Mouse(i));
         }
 
+        List<Mouse> syncMice = Collections.synchronizedList(mice);
+
         for (int j = 0; j < 5; j++) {
+            final int threadId = j;
             new Thread(() -> {
-                synchronized (lock) {
-                    while (!mice.isEmpty()) {
-                        if (!mice.isEmpty()) {
-                            Mouse removedMouse = (Mouse) (mice.remove(0));
-                            removedMouse.peep();
-                        }
+                while (!syncMice.isEmpty()) {
+                    Mouse removedMouse = (syncMice.remove(0));
+                    synchronized (lock) {
+                        System.out.print("Thread " + threadId + " ");
+                        removedMouse.peep();
                     }
                 }
             }).start();
