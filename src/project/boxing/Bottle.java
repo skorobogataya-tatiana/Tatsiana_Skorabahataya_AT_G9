@@ -6,13 +6,15 @@ import project.content.Transformable;
 import project.content.Water;
 import project.matter.Material;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bottle extends Vessel implements Containable {
 
     private Water water = new SparklingWater("no", "no", "transparent", 2);
 
     public Bottle(double volume, double diameter, Material material) {
         super(volume, diameter, material);
-
     }
 
 
@@ -30,6 +32,7 @@ public class Bottle extends Vessel implements Containable {
 
         this.water = water;
         System.out.printf("Setting water to the bottle").println();
+        addStuff(water);
     }
 
 
@@ -39,7 +42,6 @@ public class Bottle extends Vessel implements Containable {
         System.out.printf("Bottle of %f volume with %s is opened", getVolume(), water.getClass().getSimpleName()).println();
 
     }
-
 
     @Override
     public void addStuff(Transformable stuff) {
@@ -52,8 +54,10 @@ public class Bottle extends Vessel implements Containable {
 
     private void setBubbles() {
 
-        Bubble[] bubblesForBottle = new Bubble[(int) (getVolume() * 10000)];
-        ((SparklingWater) water).pump(bubblesForBottle);
+        List<Bubble> bubblesForBottle = new ArrayList<>();
+        int listSize = (int) (getVolume() * 10000);
+                //List.of(new Bubble[]);
+        ((SparklingWater) water).pump(bubblesForBottle, listSize);
         System.out.printf("Bubbles where added to the water of the bottle").println();
     }
 

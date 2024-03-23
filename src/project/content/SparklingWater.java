@@ -1,7 +1,9 @@
 package project.content;
 
+import java.util.List;
+
 public class SparklingWater extends Water {
-    private Bubble[] bubbles;
+    private List<Bubble> bubbles;
     private volatile boolean isOpened;
 
     public SparklingWater(String color, String smell, String transperency, int temperature) {
@@ -9,9 +11,9 @@ public class SparklingWater extends Water {
         new Thread(() -> this.isOpened()).start();
     }
 
-    public void pump(Bubble[] bubblesForBottle) {
-        for (int i = 0; i < bubblesForBottle.length; i++) {
-            bubblesForBottle[i] = new Bubble("Oxigen");
+    public void pump(List<Bubble> bubblesForBottle, int size) {
+        for (int i = 0; i < size; i++) {
+            bubblesForBottle.add(i, new Bubble("Oxigen"));
         }
         this.bubbles = bubblesForBottle;
         isOpened = false;
@@ -25,16 +27,16 @@ public class SparklingWater extends Water {
     }
 
     private void degas() throws InterruptedException {
-        if (bubbles[(bubbles.length - 1)] != null) {
+        if (!bubbles.isEmpty()) {
             int numbeOfBubblesToCramp = 10 + 5 * this.getTemperature();
             int counter = 0;
-            for (int i = 0; i < bubbles.length; i++) {
-                Bubble bubble = bubbles[i];
+            for (int i = 0; i < bubbles.size(); i++) {
+                Bubble bubble = bubbles.get(i);
                 bubble.cramp();
                 if (i != 0 && (i % 300 == 0)) {
                     System.out.println();
                 }
-                bubbles[i] = null;
+                bubbles.set(i, null);
                 counter++;
                 if (counter == numbeOfBubblesToCramp) {
                     Thread.sleep(1000);
@@ -56,12 +58,10 @@ public class SparklingWater extends Water {
                 e.printStackTrace();
             }
         }
-        if (isOpened) {
-            try {
-                degas();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            degas();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
