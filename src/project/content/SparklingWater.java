@@ -2,11 +2,11 @@ package project.content;
 
 public class SparklingWater extends Water {
     private Bubble[] bubbles;
-    private boolean isOpened;
+    private volatile boolean isOpened;
 
     public SparklingWater(String color, String smell, String transperency, int temperature) {
         super(color, smell, transperency, temperature);
-        this.isOpened();
+        new Thread(() -> this.isOpened()).start();
     }
 
     public void pump(Bubble[] bubblesForBottle) {
@@ -14,14 +14,14 @@ public class SparklingWater extends Water {
             bubblesForBottle[i] = new Bubble("Oxigen");
         }
         this.bubbles = bubblesForBottle;
+        isOpened = false;
         System.out.printf("Bubbles are pumped to the water").println();
     }
 
     public void setOpened() throws InterruptedException {
         System.out.printf("Sparkling water is set to open").println();
         isOpened = true;
-        degas();
-
+        //degas();
     }
 
     private void degas() throws InterruptedException {
@@ -48,7 +48,20 @@ public class SparklingWater extends Water {
     }
 
     private void isOpened() {
-        System.out.printf("Checking the state of the bottle").println();
-
+        while (!isOpened) {
+            System.out.printf("Checking the state of the bottle").println();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if (isOpened) {
+            try {
+                degas();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
