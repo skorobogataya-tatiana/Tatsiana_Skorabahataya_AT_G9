@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Bottle extends Vessel implements Containable {
 
-    private Water water = new SparklingWater("no", "no", "transparent", 2);
+    private Water water;
 
     public Bottle(double volume, double diameter, Material material) {
         super(volume, diameter, material);
@@ -47,6 +47,7 @@ public class Bottle extends Vessel implements Containable {
     public void addStuff(Transformable stuff) {
 
         if (stuff instanceof SparklingWater) {
+            this.water = (SparklingWater) stuff;
             setBubbles();
         }
         System.out.printf("This vessel is %s and %s was added to it.", getClass().getSimpleName(), stuff.getClass().getSimpleName()).println();
@@ -56,7 +57,7 @@ public class Bottle extends Vessel implements Containable {
 
         List<Bubble> bubblesForBottle = new ArrayList<>();
         int listSize = (int) (getVolume() * 10000);
-                //List.of(new Bubble[]);
+        //List.of(new Bubble[]);
         ((SparklingWater) water).pump(bubblesForBottle, listSize);
         System.out.printf("Bubbles where added to the water of the bottle").println();
     }

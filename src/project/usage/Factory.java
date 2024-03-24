@@ -10,9 +10,9 @@ public class Factory {
         Bottle bottle2 = new Bottle(0.1, 6.0, new Glass());
         Bottle bottle3 = new Bottle(0.2, 6.0, new Glass());
 
-        bottle1.setWater(new SparklingWater("no", "no", "transparent", 12));
-        bottle2.setWater(new SparklingWater("no", "no", "transparent", 18));
-        bottle3.setWater(new SparklingWater("no", "yes", "transparent", 25));
+        bottle1.addStuff(new SparklingWater("no", "no", "transparent", 12));
+        bottle2.addStuff(new SparklingWater("no", "no", "transparent", 18));
+        bottle3.addStuff(new SparklingWater("no", "yes", "transparent", 25));
 
         bottle1.open();
         bottle2.open();

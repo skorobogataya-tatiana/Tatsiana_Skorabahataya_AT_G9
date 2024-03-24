@@ -23,7 +23,6 @@ public class SparklingWater extends Water {
     public void setOpened() throws InterruptedException {
         System.out.printf("Sparkling water is set to open").println();
         isOpened = true;
-        //degas();
     }
 
     private void degas() throws InterruptedException {
@@ -49,7 +48,8 @@ public class SparklingWater extends Water {
         System.out.printf("This water is degased").println();
     }
 
-    private void isOpened() {
+    private synchronized void isOpened() {
+
         while (!isOpened) {
             System.out.printf("Checking the state of the bottle").println();
             try {
@@ -58,10 +58,12 @@ public class SparklingWater extends Water {
                 e.printStackTrace();
             }
         }
+
         try {
             degas();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
 }
