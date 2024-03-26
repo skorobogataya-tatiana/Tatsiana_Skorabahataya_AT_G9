@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SparklingWater extends Water {
     private List<Bubble> bubbles;
-    private volatile boolean isOpened;
+    private boolean isOpened;
 
     public SparklingWater(String color, String smell, String transperency, int temperature) {
         super(color, smell, transperency, temperature);
@@ -27,18 +27,26 @@ public class SparklingWater extends Water {
 
     private void degas() throws InterruptedException {
         if (!bubbles.isEmpty()) {
-            int numbeOfBubblesToCramp = 10 + 5 * this.getTemperature();
+            int numbeOfBubblesToCramp = 200;//10 + 5 * this.getTemperature();
+            if (this.getTemperature() == 0) {
+                numbeOfBubblesToCramp = 10;
+            } else {
+                numbeOfBubblesToCramp = 10 + (this.getTemperature() * 5);
+            }
             int counter = 0;
+            int separator = 0;
             for (int i = 0; i < bubbles.size(); i++) {
                 Bubble bubble = bubbles.get(i);
                 bubble.cramp();
-                if (i != 0 && (i % 300 == 0)) {
-                    System.out.println();
-                }
                 bubbles.set(i, null);
                 counter++;
+                separator++;
+                if(separator!=0 && separator%numbeOfBubblesToCramp==0) {
+                    System.out.println();
+                }
                 if (counter == numbeOfBubblesToCramp) {
                     Thread.sleep(1000);
+                    counter = 0;
                 }
             }
             System.out.println();
@@ -48,7 +56,7 @@ public class SparklingWater extends Water {
         System.out.printf("This water is degased").println();
     }
 
-    private synchronized void isOpened() {
+    private void isOpened() {
 
         while (!isOpened) {
             System.out.printf("Checking the state of the bottle").println();
@@ -65,5 +73,4 @@ public class SparklingWater extends Water {
             e.printStackTrace();
         }
     }
-
 }

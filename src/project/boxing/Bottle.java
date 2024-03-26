@@ -19,8 +19,9 @@ public class Bottle extends Vessel implements Containable {
 
 
     public void warm(int temperature) {
-        System.out.printf("Setting of the water temperature to %d degrees", temperature).println();
-        this.water.setTemperature(temperature);
+
+        water.setTemperature(temperature);
+        System.out.printf("Setting of the water temperature to %d degrees", temperature);
     }
 
     public Water getWater() {
@@ -35,17 +36,18 @@ public class Bottle extends Vessel implements Containable {
         addStuff(water);
     }
 
-
-    public void open() throws InterruptedException {
-
-        ((SparklingWater) water).setOpened();
-        System.out.printf("Bottle of %f volume with %s is opened", getVolume(), water.getClass().getSimpleName()).println();
+    public void open() {
+        try {
+            ((SparklingWater) water).setOpened();
+            System.out.printf("Bottle of %f volume with %s is opened", getVolume(), water.getClass().getSimpleName()).println();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Override
     public void addStuff(Transformable stuff) {
-
         if (stuff instanceof SparklingWater) {
             this.water = (SparklingWater) stuff;
             setBubbles();
@@ -54,7 +56,6 @@ public class Bottle extends Vessel implements Containable {
     }
 
     private void setBubbles() {
-
         List<Bubble> bubblesForBottle = new ArrayList<>();
         int listSize = (int) (getVolume() * 10000);
         //List.of(new Bubble[]);
