@@ -17,11 +17,16 @@ public class Bottle extends Vessel implements Containable {
         super(volume, diameter, material);
     }
 
-
-    public void warm(int temperature) {
-
-        water.setTemperature(temperature);
-        System.out.printf("Setting of the water temperature to %d degrees", temperature);
+    public void warm() {
+        try {
+            for (int temp = this.water.getTemperature(); temp < 40; temp++) {
+                this.water.setTemperature(temp);
+                Thread.sleep(60000);
+                System.out.printf("Setting of the water temperature to %d degrees", temp);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public Water getWater() {
@@ -36,7 +41,6 @@ public class Bottle extends Vessel implements Containable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -55,7 +59,6 @@ public class Bottle extends Vessel implements Containable {
         ((SparklingWater) water).pump(bubblesForBottle, listSize);
         System.out.printf("Bubbles where added to the water of the bottle").println();
     }
-
 
     @Override
     public Transformable removeStuff() {

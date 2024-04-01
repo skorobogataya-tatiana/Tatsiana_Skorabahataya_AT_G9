@@ -17,17 +17,8 @@ public class Factory {
         new Thread(bottle1::open).start();
 
         new Thread(() -> {
-            try {
-                while (bottle2.getWater().getTemperature() < 40) {
-                    bottle2.warm(bottle2.getWater().getTemperature() + 1);
-                    Thread.sleep(60000);
-                    bottle2.open();
-                    System.out.println();
-                }
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            bottle2.open();
+            bottle2.warm();
         }).start();
 
         new Thread(bottle3::open).start();
