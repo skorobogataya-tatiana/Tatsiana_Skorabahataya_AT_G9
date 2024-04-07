@@ -58,6 +58,6 @@ public abstract class Water implements Transformable {
     public void setTemperature(int temperature) {
 
         this.temperature = temperature;
-        System.out.printf("Temperature of the water is set to %d").println();
+        System.out.printf("Temperature of the water is set to %d", temperature).println();
     }
 }

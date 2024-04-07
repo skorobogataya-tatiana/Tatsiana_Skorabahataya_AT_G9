@@ -1,43 +1,52 @@
 package project.content;
 
+import java.util.List;
+
 public class SparklingWater extends Water {
-    private Bubble[] bubbles;
+    private List<Bubble> bubbles;
     private boolean isOpened;
 
     public SparklingWater(String color, String smell, String transperency, int temperature) {
         super(color, smell, transperency, temperature);
-        this.isOpened();
+        new Thread(() -> this.isOpened()).start();
     }
 
-    public void pump(Bubble[] bubblesForBottle) {
-        for (int i = 0; i < bubblesForBottle.length; i++) {
-            bubblesForBottle[i] = new Bubble("Oxigen");
+    public void pump(List<Bubble> bubblesForBottle, int size) {
+        for (int i = 0; i < size; i++) {
+            bubblesForBottle.add(i, new Bubble("Oxigen"));
         }
         this.bubbles = bubblesForBottle;
+        isOpened = false;
         System.out.printf("Bubbles are pumped to the water").println();
     }
 
     public void setOpened() throws InterruptedException {
         System.out.printf("Sparkling water is set to open").println();
         isOpened = true;
-        degas();
-
     }
 
     private void degas() throws InterruptedException {
-        if (bubbles[(bubbles.length - 1)] != null) {
-            int numbeOfBubblesToCramp = 10 + 5 * this.getTemperature();
+        if (!bubbles.isEmpty()) {
+            int numbeOfBubblesToCramp = 200;//10 + 5 * this.getTemperature();
+            if (this.getTemperature() == 0) {
+                numbeOfBubblesToCramp = 10;
+            } else {
+                numbeOfBubblesToCramp = 10 + (this.getTemperature() * 5);
+            }
             int counter = 0;
-            for (int i = 0; i < bubbles.length; i++) {
-                Bubble bubble = bubbles[i];
+            int separator = 0;
+            for (int i = 0; i < bubbles.size(); i++) {
+                Bubble bubble = bubbles.get(i);
                 bubble.cramp();
-                if (i != 0 && (i % 300 == 0)) {
+                bubbles.set(i, null);
+                counter++;
+                separator++;
+                if(separator!=0 && separator%numbeOfBubblesToCramp==0) {
                     System.out.println();
                 }
-                bubbles[i] = null;
-                counter++;
                 if (counter == numbeOfBubblesToCramp) {
                     Thread.sleep(1000);
+                    counter = 0;
                 }
             }
             System.out.println();
@@ -48,7 +57,20 @@ public class SparklingWater extends Water {
     }
 
     private void isOpened() {
-        System.out.printf("Checking the state of the bottle").println();
 
+        while (!isOpened) {
+            System.out.printf("Checking the state of the bottle").println();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            degas();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
